@@ -1,7 +1,3 @@
-<div>
-    <label for="name">Item name: </label>
-    <input id="name" [(ngModel)]="item.name" placeholder="name">
-</div>
 <h2>My Items</h2>
 <ul class="items">
     <li *ngFor="let item of items" [class.selected]="item === selectedItem" (click) = "onSelect(item)">

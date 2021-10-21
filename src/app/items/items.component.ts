@@ -11,8 +11,7 @@ export class ItemsComponent implements OnInit {
 
   item: Item = {
     id: 1,
-    name: 'axe',
-    price: 150
+    name: 'axe'
   };
   items = ITEMS;
   constructor() { }
