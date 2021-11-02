@@ -7,7 +7,8 @@
         <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
     </div>
     <div>
-        <label for="name">Item name: </label>
-        <input id="name" [(ngModel)]="hero.item" placeholder="name">
+        <ul>
+            <li> <app-item-detail *ngFor="let item of hero.item" [item]="item"></app-item-detail></li>
+        </ul>
     </div>
 </div>
