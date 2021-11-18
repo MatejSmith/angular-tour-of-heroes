@@ -2,7 +2,10 @@
 <div>
   <ul>
       <li *ngFor="let item of items_to_buy">
-        {{item.name}}
+        <a routerLink="/free/{{item.id}}">
+          <span class="badge">{{item.id}}</span> {{item.name}}
+        </a>
       </li>
   </ul>
 </div>
+<app-item-detail [item]="selectedItem"></app-item-detail>

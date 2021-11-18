@@ -10,6 +10,7 @@ import { ItemDetailComponent } from './item-detail/item-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ItemsToBuyComponent } from './items-to-buy/items-to-buy.component';
+import { ItemsToBuyDetailComponent } from './items-to-buy-detail/items-to-buy-detail.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ItemsToBuyComponent } from './items-to-buy/items-to-buy.component';
     ItemDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    ItemsToBuyComponent
+    ItemsToBuyComponent,
+    ItemsToBuyDetailComponent
   ],
   imports: [
     BrowserModule,

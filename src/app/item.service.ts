@@ -23,4 +23,10 @@ export class ItemService {
     this.messageService.add('ItemService: fetched items_to_buy')
     return items_to_buy;
   }
+
+  getItem(id: number): Observable<Item> {
+    const hero = ITEMS.find(h => h.id === id)!;
+    this.messageService.add('HeroService: fetched hero id=${id}');
+    return of(hero);
+  }
 }

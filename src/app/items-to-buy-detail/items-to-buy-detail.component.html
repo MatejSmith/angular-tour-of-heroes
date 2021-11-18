@@ -1,0 +1,9 @@
+<div *ngIf="items_to_buy">
+ <h2>{{items_to_buy.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{items_to_buy.id}}</div>
+    <div>
+        <label for="items_to_buy-name">items_to_buy name:</label>
+        <input id="items_to_buy-name" [(ngModel)]="items_to_buy.name" placeholder="name">
+    </div>
+    <button (click)="goBack()">go back</button>
+</div>

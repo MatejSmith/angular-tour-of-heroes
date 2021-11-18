@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from '../item';
 import { ItemService } from '../item.service';
-
+import { ITEMS_TO_BUY } from '../mock-items_to_buy';
 @Component({
   selector: 'app-items',
   templateUrl: './items.component.html',
@@ -9,11 +9,8 @@ import { ItemService } from '../item.service';
 })
 export class ItemsComponent implements OnInit {
 
-  item: Item = {
-    id: 1,
-    name: 'axe'
-  };
-  items: Item[] = [];
+  
+  items = ITEMS_TO_BUY;
   constructor(private itemService: ItemService) { }
 
   ngOnInit(): void {
