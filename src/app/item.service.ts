@@ -25,7 +25,7 @@ export class ItemService {
   }
 
   getItem(id: number): Observable<Item> {
-    const hero = ITEMS.find(h => h.id === id)!;
+    const hero = ITEMS_TO_BUY.find(h => h.id === id)!;
     this.messageService.add('HeroService: fetched hero id=${id}');
     return of(hero);
   }

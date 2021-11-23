@@ -3,6 +3,7 @@ import {ItemService} from '../item.service';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Item } from '../item';
+import { ITEMS_TO_BUY } from '../mock-items_to_buy';
 
 @Component({
   selector: 'app-items-to-buy-detail',
@@ -11,7 +12,8 @@ import { Item } from '../item';
 })
 export class ItemsToBuyDetailComponent implements OnInit {
 
-  @Input() items_to_buy?: Item;
+  Item = ITEMS_TO_BUY;
+  ITEMS_TO_BUY?: Item;
   constructor(
     private route: ActivatedRoute,
     private itemService: ItemService,
@@ -24,7 +26,7 @@ export class ItemsToBuyDetailComponent implements OnInit {
 
   getItem(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.itemService.getItem(id).subscribe(items_to_buy => this.items_to_buy = items_to_buy);
+    this.itemService.getItem(id).subscribe(ITEMS_TO_BUY => this.ITEMS_TO_BUY = ITEMS_TO_BUY);
   }
 
   goBack(): void {

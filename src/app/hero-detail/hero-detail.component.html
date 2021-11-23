@@ -6,6 +6,7 @@
         <label for="hero-name">Hero name:</label>
         <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
     </div>
+    <div><span>Hero money</span>{{hero.money}}</div>
     <div>
         <ul>
             <li> <app-item-detail *ngFor="let item of hero.item" [item]="item"></app-item-detail></li>
