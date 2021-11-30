@@ -12,7 +12,8 @@ const routes: Routes = [
   { path: 'detail/:id', component: HeroDetailComponent },
   { path: 'heroes', component: HeroesComponent },
   { path: 'items_to_buy', component: ItemsToBuyComponent},
-  { path: 'free/:id', component: ItemsToBuyDetailComponent}
+  { path: 'free/:id', component: ItemsToBuyDetailComponent},
+  { path: 'items_to_buy/:id', component: HeroDetailComponent}
 ];
 
 @NgModule({
