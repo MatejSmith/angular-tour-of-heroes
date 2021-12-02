@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Item} from './item';
 import {ITEMS} from './mock-items';
-import {ITEMS_TO_BUY} from './mock-items_to_buy';
+import { ITEMS_TO_BUY} from './mock-items_to_buy';
 import { Observable, of} from 'rxjs';
 import {MessageService} from './message.service';
 
@@ -29,4 +29,5 @@ export class ItemService {
     this.messageService.add('HeroService: fetched hero id=${id}');
     return of(hero);
   }
+
 }

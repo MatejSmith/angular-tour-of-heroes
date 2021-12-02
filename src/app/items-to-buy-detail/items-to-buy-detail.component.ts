@@ -4,6 +4,8 @@ import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Item } from '../item';
 import { ITEMS_TO_BUY } from '../mock-items_to_buy';
+import { Hero } from '../hero';
+import { HeroService } from '../hero.service';
 
 @Component({
   selector: 'app-items-to-buy-detail',
@@ -32,5 +34,7 @@ export class ItemsToBuyDetailComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+
+  
 
 }

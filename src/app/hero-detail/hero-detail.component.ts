@@ -5,7 +5,7 @@ import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { ITEMS_TO_BUY } from '../mock-items_to_buy';
-//import { result } from '../mock-items_to_buy';
+import { Item } from '../item';
 
 @Component({
   selector: 'app-hero-detail',
@@ -21,7 +21,6 @@ export class HeroDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private heroService: HeroService,
     private location: Location,
-    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -36,12 +35,14 @@ export class HeroDetailComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+  
+  public test:Item[] = [];
 
-  /*buyFilter(){
+  buyFilter(){
     const h = this.hero;
     if (h) {
-      result = ITEMS_TO_BUY.filter((name) => name.price <= h.money);
+      this.test = ITEMS_TO_BUY.filter((name) => name.price <= h.money);
     }
-  }*/
+  }
 
 }
