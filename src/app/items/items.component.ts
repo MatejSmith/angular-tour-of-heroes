@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Item } from '../item';
 import { ItemService } from '../item.service';
 import { ITEMS_TO_BUY } from '../mock-items_to_buy';
 @Component({
@@ -9,17 +8,12 @@ import { ITEMS_TO_BUY } from '../mock-items_to_buy';
 })
 export class ItemsComponent implements OnInit {
 
-  
+
   items = ITEMS_TO_BUY;
   constructor(private itemService: ItemService) { }
 
   ngOnInit(): void {
     this.getItems();
-  }
-
-  selectedItem?: Item;
-  onSelect(item: Item): void {
-    this.selectedItem = item;
   }
 
   getItems(): void {

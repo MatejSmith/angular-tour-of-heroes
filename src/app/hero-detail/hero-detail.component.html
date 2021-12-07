@@ -6,13 +6,12 @@
         <label for="hero-name">Hero name:</label>
         <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
     </div>
-    <div><span>Hero money</span>{{hero.money}}</div>
+    <div><span>Hero money: </span>{{hero.money}}</div>
     <div>
         <ul>
             <li> <app-item-detail *ngFor="let item of hero.item" [item]="item"></app-item-detail></li>
         </ul>
     </div>
     <button (click)="goBack()">go back</button>
-    <button routerLink="/items_to_buy/{{hero.id}}">kupit item</button>
-    <a class="button" routerLink="/items_to_buy/{{hero.id}}" (click)="buyFilter()">kupit item 2</a>
+    <button routerLink="/items_to_buy/{{hero.id}}">buy item</button>
 </div>

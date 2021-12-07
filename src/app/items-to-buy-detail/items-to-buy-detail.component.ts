@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {ItemService} from '../item.service';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
@@ -14,16 +14,19 @@ import { HeroService } from '../hero.service';
 })
 export class ItemsToBuyDetailComponent implements OnInit {
 
-  Item = ITEMS_TO_BUY;
+  itemstobuy = ITEMS_TO_BUY;
   ITEMS_TO_BUY?: Item;
+  hero: Hero;
   constructor(
     private route: ActivatedRoute,
     private itemService: ItemService,
-    private location: Location
+    private location: Location,
+    private heroService: HeroService
   ) { }
 
   ngOnInit(): void {
     this.getItem();
+    this.getHero();
   }
 
   getItem(): void {
@@ -35,6 +38,17 @@ export class ItemsToBuyDetailComponent implements OnInit {
     this.location.back();
   }
 
-  
+  getHero(): void {
+    const id = Number(this.route.snapshot.paramMap.get("id"));
+    this.heroService.getHero(id)
+      .subscribe(hero => this.hero = hero);
+  }
 
+  buyFreeItems(item: Item) {
+    if (this.hero.money >= item.price) {
+      this.hero.money -= item.price;
+      item.idReadyForBuy = false;
+      this.hero.item.push(item);
+    }
+  }
 }

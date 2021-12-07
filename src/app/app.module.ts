@@ -11,7 +11,6 @@ import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ItemsToBuyComponent } from './items-to-buy/items-to-buy.component';
 import { ItemsToBuyDetailComponent } from './items-to-buy-detail/items-to-buy-detail.component';
-import { FreeItemsComponent } from './free-items/free-items.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +23,6 @@ import { FreeItemsComponent } from './free-items/free-items.component';
     DashboardComponent,
     ItemsToBuyComponent,
     ItemsToBuyDetailComponent,
-    FreeItemsComponent
   ],
   imports: [
     BrowserModule,

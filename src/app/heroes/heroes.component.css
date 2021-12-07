@@ -19,19 +19,8 @@
     background-color: #e6e6e6;
     left: .1em;
   }
-  .heroes li.selected {
-    background-color: black;
-    color: white;
-  }
-  .heroes li.selected:hover {
-    background-color: #505050;
-    color: white;
-  }
-  .heroes li.selected:active {
-    background-color: black;
-    color: white;
-  }
-  .heroes .badge {
+
+.heroes .badge {
     display: inline-block;
     font-size: small;
     color: white;
@@ -45,7 +34,7 @@
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
   }
-  
+
   input {
     padding: .5rem;
   }
