@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from '../item';
 import { ItemService } from '../item.service';
-import {ITEMS_TO_BUY} from "../mock-items_to_buy";
 
 @Component({
   selector: 'app-items-to-buy',
@@ -11,7 +10,6 @@ import {ITEMS_TO_BUY} from "../mock-items_to_buy";
 export class ItemsToBuyComponent implements OnInit {
 
   items_to_buy: Item[] = [];
-  itemsFree = ITEMS_TO_BUY;
   constructor(private itemService: ItemService) { }
 
   ngOnInit() {

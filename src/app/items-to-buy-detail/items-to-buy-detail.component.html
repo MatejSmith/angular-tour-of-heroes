@@ -1,6 +1,6 @@
 <ul>
   <li *ngFor="let item of itemstobuy">
-    <a *ngIf="item.idReadyForBuy && itemstobuy.length > 0; else displayNone" >
+    <a *ngIf="item.isReadyForBuy && itemstobuy.length > 0; else displayNone" >
       <span>{{item.id}}</span> {{item.name + " price:" + item.price}}
       <button (click)="buyFreeItems(item)">Buy item</button>
     </a>

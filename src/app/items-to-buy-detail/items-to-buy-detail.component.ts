@@ -47,7 +47,7 @@ export class ItemsToBuyDetailComponent implements OnInit {
   buyFreeItems(item: Item) {
     if (this.hero.money >= item.price) {
       this.hero.money -= item.price;
-      item.idReadyForBuy = false;
+      item.isReadyForBuy = false;
       this.hero.item.push(item);
     }
   }
