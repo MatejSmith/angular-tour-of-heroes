@@ -2,7 +2,7 @@
   <li *ngFor="let item of itemstobuy">
     <a *ngIf="item.isReadyForBuy && itemstobuy.length > 0; else displayNone" >
       <span>{{item.id}}</span> {{item.name + " price:" + item.price}}
-      <button (click)="buyFreeItems(item)">Buy item</button>
+        <button mat-raised-button color="primary" (click)="buyFreeItems(item)">Buy item</button>
     </a>
     <ng-template #displayNone>
       <h2>Free item: {{item.name}} The product has been purchased</h2>
@@ -11,5 +11,5 @@
 </ul>
 
 <div>
-  <button (click)="goBack()">Go back</button>
+  <button mat-raised-button color="accent" (click)="goBack()">Go back</button>
 </div>

@@ -11,6 +11,10 @@ import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ItemsToBuyComponent } from './items-to-buy/items-to-buy.component';
 import { ItemsToBuyDetailComponent } from './items-to-buy-detail/items-to-buy-detail.component';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from "@angular/material/button";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import { ItemsToBuyDetailComponent } from './items-to-buy-detail/items-to-buy-de
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,8 +3,10 @@
     <h2>{{item.name | uppercase}} Details</h2>
     <div><span>id: </span>{{item.id}}</div>
     <div>
-        <label for="item-name">Item name:</label>
-        <input id="item-name" [(ngModel)]="item.name" placeholder="name">
+      <mat-form-field appearance="fill">
+        <mat-label>Item name</mat-label>
+        <input matInput id="item-name" [(ngModel)]="item.name" placeholder="name">
+      </mat-form-field>
     </div>
     <div><span>price: </span>{{item.price}}</div>
   <button *ngIf = "!item.isReadyForBuy" (click)="removeItemFromHero()">sell item</button>
