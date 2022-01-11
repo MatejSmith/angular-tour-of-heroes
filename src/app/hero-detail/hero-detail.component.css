@@ -1,0 +1,15 @@
+.red-button{
+    background-color: rgb(245, 9, 60);
+    margin-right: 10px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+.blue-button{
+    background-color:rgb(14, 37, 240)
+}
+.margin-text{
+    margin-left: 10px;
+}
+h2{
+    margin-left: 5px;
+}

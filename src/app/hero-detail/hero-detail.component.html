@@ -1,12 +1,14 @@
 <div *ngIf="hero">
 
     <h2>{{hero.name | uppercase}} Details</h2>
-    <div><span>id: </span>{{hero.id}}</div>
-    <div>
-        <label for="hero-name">Hero name:</label>
-        <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
+    <div class="margin-text"><span>id: </span>{{hero.id}}</div>
+    <div class="margin-text">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Hero name:</mat-label>
+            <input matInput id="hero-name" [(ngModel)]="hero.name" placeholder="name">
+          </mat-form-field>
     </div>
-    <div><span>Hero money: </span>{{hero.money}}</div>
+    <div class="margin-text"><span>Hero money: </span>{{hero.money}}</div>
     <div *ngFor="let item of hero.item">
       <ul>
         <li>
@@ -14,7 +16,7 @@
         </li>
       </ul>
     </div>
-    <button (click)="goBack()">go back</button>
-    <button routerLink="/items_to_buy/{{hero.id}}">buy item</button>
+    <button mat-flat-button color="warn" class="red-button" (click)="goBack()">go back</button>
+    <button mat-flat-button color="warn" class="blue-button" routerLink="/items_to_buy/{{hero.id}}">buy item</button>
 
 </div>
