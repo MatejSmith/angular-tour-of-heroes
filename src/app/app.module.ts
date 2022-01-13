@@ -18,6 +18,8 @@ import {MatInputModule} from "@angular/material/input";
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
+import {MatSelectModule} from '@angular/material/select'
+import {MatSortModule} from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     MatButtonModule,
     MatInputModule,
     HttpClientModule,
+    MatSelectModule,
+    MatSortModule,
 
   // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
   // and returns simulated server responses.
