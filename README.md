@@ -31,3 +31,5 @@ https://www.npmjs.com/package/angular-in-memory-web-api/v/0.12.0
 https://embed.plnkr.co/7cBiFB/
 
 https://material.angular.io/components/select/overview
+
+https://material.angular.io/components/sort/overview
