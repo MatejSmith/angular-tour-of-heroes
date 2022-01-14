@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Sort } from '@angular/material/sort';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { MessageService } from '../message.service';
+import {HEROES} from '../mock-heroes';
 
 @Component({
   selector: 'app-heroes',
@@ -13,14 +13,14 @@ export class HeroesComponent implements OnInit {
 
   selectedHero?: Hero;
   heroes: Hero[] = [];
-  sort: any;
 
-  constructor(private heroService: HeroService, private messageService: MessageService) { }
+  constructor(private heroService: HeroService, private messageService: MessageService) {
+  }
 
   displayedColumns: string[] = ['id', 'name', 'money'];
 
 
-  selectedColumn = 'name';
+  selectedColumn = 'id';
 
   ngOnInit() {
     this.getHeroes();
@@ -34,13 +34,19 @@ export class HeroesComponent implements OnInit {
 
   getHeroes(): void {
     this.heroService.getHeroes()
-        .subscribe(heroes => this.heroes = heroes);
+      .subscribe(heroes => this.heroes = heroes);
   }
 
+
   changeSortedColumn() {
-    const sortState: Sort = {active: this.selectedColumn, direction: 'asc'};
-    this.sort.active = sortState.active;
-    this.sort.direction = sortState.direction;
-    this.sort.sortChange.emit(sortState);    
+    if (this.selectedColumn == "money") {
+      HEROES.sort((a, b) => (a.money > b.money) ? 1 : -1);
+    }
+    else if (this.selectedColumn == "name"){
+      HEROES.sort((a, b) => (a.name > b.name) ? 1 : -1);
+    }
+    else{
+      HEROES.sort((a, b) => (a.id > b.id) ? 1 : -1);
+    }
   }
 }

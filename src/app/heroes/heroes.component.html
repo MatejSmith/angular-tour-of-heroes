@@ -1,4 +1,12 @@
 <h2>My Heroes</h2>
+<mat-form-field>
+  <mat-label>Sort</mat-label>
+  <mat-select  [(value)]="selectedColumn" (selectionChange)="changeSortedColumn()">
+    <mat-option *ngFor="let column of displayedColumns" [value]="column">
+      {{column}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
 <ul class="heroes">
     <li *ngFor="let hero of heroes">
         <a routerLink="/detail/{{hero.id}}">
@@ -6,12 +14,4 @@
         </a>
     </li>
 </ul>
-<mat-form-field style="margin-top:10px">
-    <mat-label>Column to sort</mat-label>
-    <mat-select  [(value)]="selectedColumn" (selectionChange)="changeSortedColumn()">
-      <mat-option *ngFor="let column of displayedColumns" [value]="column">
-        {{column}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
 <!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->
