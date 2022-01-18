@@ -25,13 +25,3 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
-https://www.npmjs.com/package/angular-in-memory-web-api/v/0.12.0
-
-https://embed.plnkr.co/7cBiFB/
-
-https://material.angular.io/components/select/overview
-
-https://material.angular.io/components/sort/overview
-
-https://stackblitz.com/edit/angular-mat-sort-default-hwa9q2?file=app%2Ftable-sorting-example.html
