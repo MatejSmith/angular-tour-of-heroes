@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { MessageService } from '../message.service';
@@ -17,14 +18,12 @@ export class HeroesComponent implements OnInit {
   constructor(private heroService: HeroService, private messageService: MessageService) {
   }
 
-  displayedColumns: string[] = ['id', 'name', 'money'];
+  selected: string = 'ID';
 
-
-  selectedColumn = 'id';
 
   ngOnInit() {
     this.getHeroes();
-    this.changeSortedColumn();
+    this.changeState(null);
   }
 
   onSelect(hero: Hero): void {
@@ -37,16 +36,16 @@ export class HeroesComponent implements OnInit {
       .subscribe(heroes => this.heroes = heroes);
   }
 
-
-  changeSortedColumn() {
-    if (this.selectedColumn == "money") {
-      HEROES.sort((a, b) => (a.money > b.money) ? 1 : -1);
+  changeState($event: any){
+    if (this.selected === 'Money') {
+      this.heroes.sort((a, b) => (a.money > b.money) ? 1 : -1);
     }
-    else if (this.selectedColumn == "name"){
-      HEROES.sort((a, b) => (a.name > b.name) ? 1 : -1);
+    else if (this.selected === 'Name'){
+      this.heroes.sort((a, b) => (a.name > b.name) ? 1 : -1);
     }
     else{
-      HEROES.sort((a, b) => (a.id > b.id) ? 1 : -1);
+      this.heroes.sort((a, b) => (a.id > b.id) ? 1 : -1);
     }
   }
+
 }
