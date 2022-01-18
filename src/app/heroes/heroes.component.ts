@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { MessageService } from '../message.service';
-import {HEROES} from '../mock-heroes';
 
 @Component({
   selector: 'app-heroes',
@@ -47,5 +45,4 @@ export class HeroesComponent implements OnInit {
       this.heroes.sort((a, b) => (a.id > b.id) ? 1 : -1);
     }
   }
-
 }

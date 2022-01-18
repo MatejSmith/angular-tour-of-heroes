@@ -2,9 +2,9 @@
 <mat-form-field appearance="fill">
   <mat-label>Select an option</mat-label>
   <mat-select [(value)]="selected" (selectionChange)="changeState($event)">
-    <mat-option value="ID">ID</mat-option>
-    <mat-option value="Money">Money</mat-option>
-    <mat-option value="Name">Name</mat-option>
+    <mat-option value='ID'>ID</mat-option>
+    <mat-option value='Money'>Money</mat-option>
+    <mat-option value='Name'>Name</mat-option>
   </mat-select>
 </mat-form-field>
 <ul class="heroes">
@@ -14,4 +14,3 @@
         </a>
     </li>
 </ul>
-<!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->
