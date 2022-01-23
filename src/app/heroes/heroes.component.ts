@@ -10,15 +10,19 @@ import { HeroService } from '../hero.service';
 export class HeroesComponent implements OnInit {
 
   heroes: Hero[] = [];
+  hero: Hero;
 
   constructor(private heroService: HeroService) {
   }
 
-  selected: string = 'ID';
+  public selected: string = 'ID';
+  public isVisible:boolean = false;
+  public CreateHero:any = 'Create Hero';
 
   ngOnInit() {
     this.getHeroes();
     this.changeState();
+    this.resetForm();
   }
 
   getHeroes(): void {
@@ -36,5 +40,23 @@ export class HeroesComponent implements OnInit {
     else{
       this.heroes.sort((a, b) => (a.id > b.id) ? 1 : -1);
     }
+  }
+
+  toggle() {
+    this.isVisible = !this.isVisible;
+
+    if(this.isVisible)
+      this.CreateHero = "Cancel";
+    else
+      this.CreateHero = "Create Hero";
+  }
+
+  addStudent() {
+    this.heroes.push(this.hero);
+    this.resetForm();
+  }
+
+  resetForm() {
+    this.hero = {id: 0, name: '',item: [], money: 0, life: 0, strength: 0};
   }
 }

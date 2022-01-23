@@ -46,3 +46,12 @@ h2{
 .mat-form-field{
   margin-left: 10px;
 }
+.ng-container{
+  margin-left: 15px;
+}
+button{
+  margin-left: 10px;
+}
+div{
+  margin-left: 15px;
+}
