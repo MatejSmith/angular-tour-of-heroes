@@ -1,0 +1,13 @@
+<div id="search-component">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Item Search</mat-label>
+    <input matInput type="search" #searchBox id="search-box" (input)="search(searchBox.value)">
+  </mat-form-field>
+  <ul class="search-result">
+    <li *ngFor="let item of items$ | async" >
+      <a routerLink="/detail/{{item.id}}">
+        {{item.name}}
+      </a>
+    </li>
+  </ul>
+</div>

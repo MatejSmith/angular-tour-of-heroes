@@ -19,4 +19,6 @@ export class ItemsToBuyComponent implements OnInit {
   getItems_to_buy(): void {
     this.itemService.getItems_to_buy().subscribe(items_to_buy => this.items_to_buy = items_to_buy);
   }
+
+
 }

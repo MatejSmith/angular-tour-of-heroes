@@ -20,6 +20,7 @@ import { InMemoryDataService } from './in-memory-data.service';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import {MatSelectModule} from '@angular/material/select'
 import {MatSortModule} from '@angular/material/sort';
+import { ItemSearchComponent } from './item-search/item-search.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import {MatSortModule} from '@angular/material/sort';
     ItemsToBuyComponent,
     ItemsToBuyDetailComponent,
     HeroSearchComponent,
+    ItemSearchComponent,
   ],
   imports: [
     BrowserModule,
