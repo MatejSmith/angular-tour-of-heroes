@@ -1,7 +1,7 @@
 <h2>My Heroes</h2>
 <mat-form-field appearance="fill">
   <mat-label>Select an option</mat-label>
-  <mat-select [(value)]="selected" (selectionChange)="changeState($event)">
+  <mat-select [(value)]="selected" (selectionChange)="changeState()">
     <mat-option value='ID'>ID</mat-option>
     <mat-option value='Money'>Money</mat-option>
     <mat-option value='Name'>Name</mat-option>

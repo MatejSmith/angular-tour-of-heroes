@@ -1,5 +1,13 @@
 <h2>Items to buy</h2>
 <app-item-search></app-item-search>
+<mat-form-field appearance="fill">
+  <mat-label>Select an option</mat-label>
+  <mat-select [(value)]="selected" (selectionChange)="changeState()">
+    <mat-option value='ID'>ID</mat-option>
+    <mat-option value='Price'>Price</mat-option>
+    <mat-option value='Name'>Name</mat-option>
+  </mat-select>
+</mat-form-field>
 <div>
   <ul>
       <li *ngFor="let item of items_to_buy">
