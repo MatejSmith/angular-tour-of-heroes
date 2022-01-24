@@ -10,13 +10,18 @@ import { ItemService } from '../item.service';
 export class ItemsToBuyComponent implements OnInit {
 
   items_to_buy: Item[] = [];
+  item: Item;
   constructor(private itemService: ItemService) { }
 
   selected: string = 'ID';
+  public isVisible:boolean = false;
+  public createItem:any = 'Create Item';
+
 
   ngOnInit() {
     this.getItems_to_buy();
     this.changeState();
+    this.resetForm();
   }
 
   getItems_to_buy(): void {
@@ -35,4 +40,21 @@ export class ItemsToBuyComponent implements OnInit {
     }
   }
 
+  toggle() {
+    this.isVisible = !this.isVisible;
+
+    if(this.isVisible)
+      this.createItem = "Cancel";
+    else
+      this.createItem = "Create Item";
+  }
+
+  addItem() {
+    this.items_to_buy.push(this.item);
+    this.resetForm();
+  }
+
+  resetForm() {
+    this.item = {id: 0, name: '', price: 0, isReadyForBuy: true};
+  }
 }

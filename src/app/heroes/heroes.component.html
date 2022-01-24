@@ -19,7 +19,7 @@
 </button>
 
 <div *ngIf="isVisible">
-  <form class="form-inline" autocomplete="off" (submit)="addStudent()">
+  <form class="form-inline" autocomplete="off" (submit)="addHero()">
     <div class="form-group">
       <label>Name:</label>
       <input type="text" class="form-control" name="name" required maxlength="20" #name="ngModel" [(ngModel)]="hero.name">

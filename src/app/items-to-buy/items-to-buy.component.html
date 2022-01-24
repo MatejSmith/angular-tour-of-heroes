@@ -17,3 +17,44 @@
       </li>
   </ul>
 </div>
+
+<button (click)="toggle()">
+  {{createItem}}
+</button>
+
+<div *ngIf="isVisible">
+  <form class="form-inline" autocomplete="off" (submit)="addItem()">
+    <div class="form-group">
+      <label>Name:</label>
+      <input type="text" class="form-control" name="name" required maxlength="20" #name="ngModel" [(ngModel)]="item.name">
+      <div *ngIf="name.invalid && (name.dirty || name.touched)">
+        <div *ngIf="name.errors?.['required']">
+          Name is required.
+        </div>
+        <div *ngIf="name.errors?.['maxlength']">
+          Can be max 20 characters long.
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>ID:</label>
+      <input type="number" class="form-control" name="id" [(ngModel)]="item.id">
+    </div>
+    <div class="form-group">
+      <label>Price:</label>
+      <input type="number" class="form-control" name="price" required min="1" max="100" #price="ngModel" [(ngModel)]="item.price">
+      <div *ngIf="price.invalid && (price.dirty || price.touched)">
+        <div *ngIf="price.errors?.['required']">
+          Price is required.
+        </div>
+        <div *ngIf="price.errors?.['min']">
+          Price must be at least 1 characters long.
+        </div>
+        <div *ngIf="price.errors?.['max']">
+          Can be max 100 characters long.
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>

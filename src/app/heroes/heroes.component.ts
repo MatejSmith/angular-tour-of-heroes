@@ -51,7 +51,7 @@ export class HeroesComponent implements OnInit {
       this.CreateHero = "Create Hero";
   }
 
-  addStudent() {
+  addHero() {
     this.heroes.push(this.hero);
     this.resetForm();
   }
