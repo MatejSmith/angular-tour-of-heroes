@@ -22,7 +22,15 @@
   <form class="form-inline" autocomplete="off" (submit)="addStudent()">
     <div class="form-group">
       <label>Name:</label>
-      <input type="text" class="form-control" name="name" [(ngModel)]="hero.name">
+      <input type="text" class="form-control" name="name" required maxlength="20" #name="ngModel" [(ngModel)]="hero.name">
+      <div *ngIf="name.invalid && (name.dirty || name.touched)">
+        <div *ngIf="name.errors?.['required']">
+          Name is required.
+        </div>
+        <div *ngIf="name.errors?.['maxlength']">
+          Can be max 20 characters long.
+        </div>
+      </div>
     </div>
     <div class="form-group">
       <label>ID:</label>
@@ -34,11 +42,33 @@
     </div>
     <div class="form-group">
       <label>Life:</label>
-      <input type="number" class="form-control" name="life" [(ngModel)]="hero.life">
+      <input type="number" class="form-control" name="life" id="life" required min="1" max="10" #life="ngModel" [(ngModel)]="hero.life">
+      <div *ngIf="life.invalid && (life.dirty || life.touched)">
+        <div *ngIf="life.errors?.['required']">
+          Life is required.
+        </div>
+        <div *ngIf="life.errors?.['min']">
+          Life must be at least 1 characters long.
+        </div>
+        <div *ngIf="life.errors?.['max']">
+          Can be max 10 characters long.
+        </div>
+      </div>
     </div>
     <div class="form-group">
       <label>strength:</label>
-      <input type="number" class="form-control" name="strength" [(ngModel)]="hero.strength">
+      <input type="number" class="form-control" name="strength" id="strength" required min="1" max="10" #strength="ngModel" [(ngModel)]="hero.strength">
+      <div *ngIf="strength.invalid && (strength.dirty || strength.touched)">
+        <div *ngIf="strength.errors?.['required']">
+          Strength is required.
+        </div>
+        <div *ngIf="strength.errors?.['min']">
+          Strength must be at least 1 characters long.
+        </div>
+        <div *ngIf="strength.errors?.['max']">
+          Can be max 10 characters long.
+        </div>
+      </div>
     </div>
     <button type="submit" class="btn btn-success">Submit</button>
   </form>
