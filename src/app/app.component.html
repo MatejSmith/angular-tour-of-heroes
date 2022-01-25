@@ -1,5 +1,5 @@
 <h1>{{title}}</h1>
-<nav>
+<nav *ngIf="router.url !== '/login'">
     <a mat-flat-button color="warn" routerLink="/dashboard">Dashboard</a>
     <br>
     <a mat-flat-button color="warn" routerLink="/heroes">Heroes</a>
