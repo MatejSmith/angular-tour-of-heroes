@@ -14,20 +14,20 @@ export class LoginComponent implements OnInit {
 
   username: string;
   password: string;
-  message: boolean;
+  userIdentify: boolean;
 
   ngOnInit() {
-    this.data.setStatus(this.message);
+    this.data.setStatus(this.userIdentify);
   }
 
   login() : void {
     if(this.username == 'admin' && this.password == 'admin'){
       this.router.navigate(["dashboard"]);
-      this.data.setStatus(this.message = true);
+      this.data.setStatus(this.userIdentify = true);
     }
     else if(this.username == 'user' && this.password == 'user'){
       this.router.navigate(["dashboard"]);
-      this.data.setStatus(this.message = false);
+      this.data.setStatus(this.userIdentify = false);
     }
     else {
       alert("Invalid credentials");

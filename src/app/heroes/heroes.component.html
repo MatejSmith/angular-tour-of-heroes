@@ -14,10 +14,9 @@
         </a>
     </li>
 </ul>
-<button *ngIf="message == true" (click)="toggle()">
+<button *ngIf="userIdentify == true" (click)="toggle()">
   {{CreateHero}}
 </button>
-
 <div *ngIf="isVisible">
   <form class="form-inline" autocomplete="off" (submit)="addHero()">
     <div class="form-group">
@@ -31,10 +30,6 @@
           Can be max 20 characters long.
         </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label>ID:</label>
-      <input type="number" class="form-control" name="id" [(ngModel)]="hero.id">
     </div>
     <div class="form-group">
       <label>Money:</label>

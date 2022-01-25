@@ -18,7 +18,7 @@
   </ul>
 </div>
 
-<button (click)="toggle()">
+<button *ngIf="userIdentify == true" (click)="toggle()">
   {{createItem}}
 </button>
 
@@ -35,10 +35,6 @@
           Can be max 20 characters long.
         </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label>ID:</label>
-      <input type="number" class="form-control" name="id" [(ngModel)]="item.id">
     </div>
     <div class="form-group">
       <label>Price:</label>

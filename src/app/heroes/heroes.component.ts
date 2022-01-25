@@ -19,13 +19,13 @@ export class HeroesComponent implements OnInit {
   public selected: string = 'ID';
   public isVisible:boolean = false;
   public CreateHero:any = 'Create Hero';
-  message: boolean;
+  userIdentify: boolean;
 
   ngOnInit() {
     this.getHeroes();
     this.changeState();
     this.resetForm();
-    this.message = this.data.getStatus();
+    this.userIdentify = this.data.getStatus();
   }
 
   getHeroes(): void {
@@ -55,6 +55,7 @@ export class HeroesComponent implements OnInit {
   }
 
   addHero() {
+    this.hero.id = Math.max.apply(Math, this.heroes.map(function(o) { return o.id + 1; }));
     this.heroes.push(this.hero);
     this.resetForm();
   }

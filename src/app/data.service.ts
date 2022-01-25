@@ -4,14 +4,14 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DataService {
-  message: boolean;
+  userIdentify: boolean;
 
   constructor() { }
 
   setStatus(data:any){
-    this.message = data;
+    this.userIdentify = data;
   }
   getStatus(){
-    return this.message;
+    return this.userIdentify;
   }
 }

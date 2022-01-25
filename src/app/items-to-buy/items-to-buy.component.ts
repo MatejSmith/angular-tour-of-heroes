@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from '../item';
 import { ItemService } from '../item.service';
+import {DataService} from "../data.service";
 
 @Component({
   selector: 'app-items-to-buy',
@@ -11,17 +12,20 @@ export class ItemsToBuyComponent implements OnInit {
 
   items_to_buy: Item[] = [];
   item: Item;
-  constructor(private itemService: ItemService) { }
+
+  constructor(private itemService: ItemService, private data: DataService) { }
 
   selected: string = 'ID';
   public isVisible:boolean = false;
   public createItem:any = 'Create Item';
+  userIdentify: boolean;
 
 
   ngOnInit() {
     this.getItems_to_buy();
     this.changeState();
     this.resetForm();
+    this.userIdentify = this.data.getStatus();
   }
 
   getItems_to_buy(): void {
@@ -50,6 +54,7 @@ export class ItemsToBuyComponent implements OnInit {
   }
 
   addItem() {
+    this.item.id = Math.max.apply(Math, this.items_to_buy.map(function(o) { return o.id + 1; }));
     this.items_to_buy.push(this.item);
     this.resetForm();
   }
