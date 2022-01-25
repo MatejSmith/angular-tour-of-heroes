@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
+import {DataService} from "../data.service";
 
 @Component({
   selector: 'app-heroes',
@@ -12,17 +13,19 @@ export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
   hero: Hero;
 
-  constructor(private heroService: HeroService) {
+  constructor(private heroService: HeroService, private data: DataService) {
   }
 
   public selected: string = 'ID';
   public isVisible:boolean = false;
   public CreateHero:any = 'Create Hero';
+  message: boolean;
 
   ngOnInit() {
     this.getHeroes();
     this.changeState();
     this.resetForm();
+    this.message = this.data.getStatus();
   }
 
   getHeroes(): void {

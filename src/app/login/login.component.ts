@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {Router} from '@angular/router';
+import {DataService} from "../data.service";
 
 @Component({
   selector: 'app-login',
@@ -9,18 +10,26 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private data: DataService) { }
 
   username: string;
   password: string;
+  message: boolean;
 
   ngOnInit() {
+    this.data.setStatus(this.message);
   }
 
   login() : void {
-    if(this.username == 'admin' && this.password == 'admin' || this.username == 'user' && this.password == 'user'){
+    if(this.username == 'admin' && this.password == 'admin'){
       this.router.navigate(["dashboard"]);
-    }else {
+      this.data.setStatus(this.message = true);
+    }
+    else if(this.username == 'user' && this.password == 'user'){
+      this.router.navigate(["dashboard"]);
+      this.data.setStatus(this.message = false);
+    }
+    else {
       alert("Invalid credentials");
     }
   }

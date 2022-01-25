@@ -14,7 +14,7 @@
         </a>
     </li>
 </ul>
-<button (click)="toggle()">
+<button *ngIf="message == true" (click)="toggle()">
   {{CreateHero}}
 </button>
 
