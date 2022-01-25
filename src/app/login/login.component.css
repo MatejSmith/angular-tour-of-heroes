@@ -1,0 +1,10 @@
+.example-card {
+  text-align: center;
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+}
+.mat-card-header{
+  display: block;
+  margin: 0 auto;
+}

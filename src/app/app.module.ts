@@ -21,6 +21,9 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
 import {MatSelectModule} from '@angular/material/select'
 import {MatSortModule} from '@angular/material/sort';
 import { ItemSearchComponent } from './item-search/item-search.component';
+import { LoginComponent } from './login/login.component';
+import { UserComponent } from './user/user.component';
+import {CustomMaterialModule} from "./material.module";
 
 @NgModule({
   declarations: [
@@ -35,6 +38,8 @@ import { ItemSearchComponent } from './item-search/item-search.component';
     ItemsToBuyDetailComponent,
     HeroSearchComponent,
     ItemSearchComponent,
+    LoginComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +51,7 @@ import { ItemSearchComponent } from './item-search/item-search.component';
     HttpClientModule,
     MatSelectModule,
     MatSortModule,
+    CustomMaterialModule,
 
   // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
   // and returns simulated server responses.
